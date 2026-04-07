@@ -1,55 +1,18 @@
 {
-  "name": "approval-protocol",
-  "version": "0.1.0",
-  "description": "A protocol for AI agent human-in-the-loop approval. What MCP did for tool access, AP does for human oversight.",
-  "type": "module",
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./client": {
-      "types": "./dist/client/index.d.ts",
-      "import": "./dist/client/index.js",
-      "require": "./dist/client/index.cjs"
-    },
-    "./server": {
-      "types": "./dist/server/index.d.ts",
-      "import": "./dist/server/index.js",
-      "require": "./dist/server/index.cjs"
-    }
-  },
+  "name": "approval-protocol-monorepo",
+  "private": true,
   "scripts": {
-    "build": "tsup",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "dev": "tsx examples/basic.ts"
-  },
-  "keywords": [
-    "ai",
-    "agents",
-    "approval",
-    "human-in-the-loop",
-    "protocol",
-    "mcp",
-    "safety"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "@hono/node-server": "^1.13.7",
-    "better-sqlite3": "^11.7.0",
-    "hono": "^4.6.0",
-    "zod": "^3.24.0"
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "test:watch": "pnpm -r run test:watch"
   },
   "devDependencies": {
-    "@types/better-sqlite3": "^7.6.12",
-    "tsup": "^8.3.0",
-    "tsx": "^4.19.0",
-    "typescript": "^5.7.0",
-    "vitest": "^2.1.0"
+    "typescript": "^5.7.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "esbuild"
+    ]
   }
 }
