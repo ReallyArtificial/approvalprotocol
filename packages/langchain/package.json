@@ -1,0 +1,52 @@
+{
+  "name": "@approval-protocol/langchain",
+  "version": "0.1.0",
+  "description": "LangChain integration for Approval Protocol — wrap any tool with human-in-the-loop approval.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "langchain",
+    "ai",
+    "agents",
+    "approval",
+    "human-in-the-loop",
+    "tools"
+  ],
+  "author": "josharsh",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ReallyArtificial/ApprovalProtocol.git",
+    "directory": "packages/langchain"
+  },
+  "homepage": "https://github.com/ReallyArtificial/ApprovalProtocol#readme",
+  "files": [
+    "dist"
+  ],
+  "peerDependencies": {
+    "@langchain/core": ">=0.3.0",
+    "@approval-protocol/core": "workspace:*"
+  },
+  "devDependencies": {
+    "@langchain/core": "^0.3.0",
+    "@approval-protocol/core": "workspace:*",
+    "zod": "^3.24.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}
