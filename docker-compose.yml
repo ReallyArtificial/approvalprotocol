@@ -1,0 +1,18 @@
+services:
+  approvalprotocol:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: reallyartificial/approvalprotocol:latest
+    container_name: approvalprotocol-server
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:4000/health').then(r => r.ok ? process.exit(0) : process.exit(1)).catch(() => process.exit(1))"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s
