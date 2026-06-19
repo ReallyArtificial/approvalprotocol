@@ -1,0 +1,61 @@
+name: Bug Report
+description: File a bug report for approvalprotocol
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug in approvalprotocol!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Describe the bug you encountered.
+      placeholder: Tell us what you see!
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+      description: Describe what you expected to happen.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: How can we reproduce this?
+      placeholder: |
+        1. Install approvalprotocol
+        2. Run example...
+        3. See error
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: What version of approvalprotocol are you running?
+      placeholder: e.g., 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: context
+    attributes:
+      label: Usage context
+      description: Where are you using approvalprotocol?
+      options:
+        - Server implementation
+        - Client implementation
+        - Testing
+        - Example code
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
