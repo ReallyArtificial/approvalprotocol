@@ -36,11 +36,11 @@ Agent                    AP Server                   Human
 ## Quickstart
 
 ```bash
-npm install approval-protocol
+npm install @reallyartificial/approval-protocol-core
 ```
 
 ```typescript
-import { ApprovalServer, ApprovalClient, CliChannel } from "approval-protocol";
+import { ApprovalServer, ApprovalClient, CliChannel } from "@reallyartificial/approval-protocol-core";
 
 // Start server with CLI approval channel
 const server = new ApprovalServer({
@@ -98,7 +98,7 @@ await client.rollback({
 Or use the `withApproval` wrapper for transparent lifecycle management:
 
 ```typescript
-import { withApproval } from "approval-protocol/client";
+import { withApproval } from "@reallyartificial/approval-protocol-core/client";
 
 const sendEmail = withApproval(
   async (to: string, body: string) => { /* actual send logic */ },
